@@ -24,3 +24,15 @@ func TranslateBedrock(packet bedrockpacket.Packet) (javapacket.Packet, error) {
 	// TODO: HACK Golang moment
 	return javapacket.Packet{ID: int32(0x1)}, errors.New("Packet ID not found in translator")
 }
+
+//func TranslateJava(packet javapacket.Packet) (bedrockpacket.Packet, error) {
+//	//Hardcoded
+//	switch packet.ID {
+//	case Chat:
+//		return bedrockpacket.Text{TextType: bedrockpacket.TextTypeChat, NeedsTranslation: false, SourceName: packet.}
+//	}
+//}
+//
+//func TranslateBedrock(packet bedrockpacket.Packet) (javapacket.Packet, error) {
+//
+//}

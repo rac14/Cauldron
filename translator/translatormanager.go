@@ -10,7 +10,6 @@ var BedrockPacket = make(map[int32]bedrockpacket.Packet)
 var JavaPacket = make(map[uint32]javapacket.Packet)
 
 func initTranslator() {
-	
 }
 
 func RegisterJavaToBe(id int32, packet bedrockpacket.Packet) {
