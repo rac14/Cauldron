@@ -41,7 +41,12 @@ func (pl *Player) Handle() {
 				break
 			}
 
-			pl.Conn.WritePacket(translator.TranslateBedrock(p))
+			packet, err := translator.TranslateBedrock(p)
+			if err != nil {
+				break
+			}
+
+			pl.Conn.WritePacket(packet)
 		}
 	}()
 
@@ -54,6 +59,11 @@ func (pl *Player) Handle() {
 			break
 		}
 
-		pl.Upstream.ClientConn.WritePacket(translator.TranslateJava(p))
+		packet, err := translator.TranslateJava(p)
+		if err != nil {
+			break
+		}
+
+		pl.Upstream.ClientConn.WritePacket(packet)
 	}
 }
